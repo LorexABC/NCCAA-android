@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="15dp">
+
+        <TextView
+            android:id="@+id/titleExam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="February 10-12, 2024, CDQ Exam"
+            android:textColor="@color/light_black"
+            android:lineHeight="22dp"
+            android:fontFamily="@font/roboto_medium"
+            android:textSize="20dp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_orange"
+                android:layout_weight="2"
+                android:textSize="14dp"
+                android:text="Registration:"/>
+            <TextView
+                android:id="@+id/registrationExam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_orange"
+                android:textSize="14dp"
+                android:layout_weight="1"
+                android:text="11/10/2023 - 01/10/2024"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_orange"
+                android:textSize="14dp"
+                android:layout_weight="2"
+                android:text="Late:"/>
+            <TextView
+                android:id="@+id/lateExam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_orange"
+                android:textSize="14dp"
+                android:layout_weight="1"
+                android:text="01/11/2024 - 02/10/2024"/>
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/registerExamButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/capsul_blue_btn"
+            android:text="Register for the February Exam"
+            android:textSize="16dp"
+            android:paddingVertical="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="25dp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:fontFamily="@font/roboto_medium"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/lineBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:src="@drawable/circle_image_line" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OR"
+            android:layout_centerInParent="true"
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto_medium"
+            android:textSize="15dp"/>
+    </RelativeLayout>
+
+</LinearLayout>

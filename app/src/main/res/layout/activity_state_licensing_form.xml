@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.app_nccaa.nccaa.Activity.State_Licensing_Form">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/purple_700"
+        android:paddingHorizontal="16dp"
+        android:layout_height="56dp">
+
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_left" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/logo_11" />
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginVertical="10dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="State Licensing Form"
+                    android:textColor="@color/light_black"
+                    android:textSize="20dp" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="36dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="22dp"
+                android:src="@drawable/ic_state_licensing_form" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="The form below is required for submitting requests for VOC's, verification of certification (whether from employers, personal usage, or state medical boards). Please complete all fields and submit payment of $25.00. Upon receipt, NCCAA will process your request and send you a copy of the request."
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/dark_gray"
+                android:textSize="14dp"
+                android:letterSpacing="0.02"
+                android:lineHeight="22dp"
+                android:layout_marginTop="22dp"/>
+
+            <TextView
+                android:id="@+id/seeInstrucTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:lineHeight="22dp"
+                android:textColor="@color/blue"
+                android:textSize="14dp"
+                android:text="(see instructor below to complete the form)"
+                android:letterSpacing="0.02"
+                android:layout_marginTop="4dp"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="2dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/userID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="42dp"
+                    android:hint="User ID"
+                    android:letterSpacing="0.02"
+                    android:textColor="@color/light_black"
+                    android:textSize="16dp"
+                    android:fontFamily="@font/roboto_regular"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="9dp"
+                    android:background="@color/view_color"/>
+
+
+                <EditText
+                    android:id="@+id/firstNameET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:layout_marginTop="38dp"
+                    android:hint="First Name"
+                    android:letterSpacing="0.02"
+                    android:textColor="@color/light_black"
+                    android:textSize="16dp"
+                    android:fontFamily="@font/roboto_regular"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="9dp"
+                    android:background="@color/view_color"/>
+
+
+                <EditText
+                    android:id="@+id/lastNameET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:layout_marginTop="38dp"
+                    android:hint="Last Name"
+                    android:letterSpacing="0.02"
+                    android:textColor="@color/light_black"
+                    android:textSize="16dp"
+                    android:fontFamily="@font/roboto_regular"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="9dp"
+                    android:background="@color/view_color"/>
+
+
+                <EditText
+                    android:id="@+id/emailET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:layout_marginTop="38dp"
+                    android:hint="Email"
+                    android:letterSpacing="0.02"
+                    android:textColor="@color/light_black"
+                    android:textSize="16dp"
+                    android:fontFamily="@font/roboto_regular"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="9dp"
+                    android:background="@color/view_color"/>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="38dp">
+
+                    <TextView
+                        android:id="@+id/DOB_TV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:hint="Date of Birth"
+                        android:letterSpacing="0.02"
+                        android:textColor="@color/light_black"
+                        android:textSize="16dp" />
+
+                    <ImageView
+                        android:layout_width="11dp"
+                        android:layout_height="6.5dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_arrow_down"/>
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="9dp"
+                    android:background="@color/view_color"/>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="38dp"  >
+
+                    <Spinner
+                        android:id="@+id/voc_recipientSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:layout_centerVertical="true"
+                        android:background="@null"
+                        android:minHeight="0dp" />
+                    <ImageView
+                        android:layout_width="11dp"
+                        android:layout_height="6.5dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/ic_arrow_down" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="9dp"
+                    android:background="@color/view_color"/>
+
+
+
+                <LinearLayout
+                    android:id="@+id/state_medical_board_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="38dp"  >
+                        <Spinner
+                            android:id="@+id/stateSpinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="22dp"
+                            android:layout_centerVertical="true"
+                            android:background="@null"
+                            android:minHeight="0dp"/>
+                        <ImageView
+                            android:layout_width="11dp"
+                            android:layout_height="6.5dp"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"
+                            android:src="@drawable/ic_arrow_down" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="9dp"
+                        android:background="@color/view_color"/>
+
+
+                    <EditText
+                        android:id="@+id/credential_spec"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="42dp"
+                        android:hint="Name of Credentialing Specialist"
+                        android:background="#00000000"
+                        android:letterSpacing="0.02"
+                        android:textColor="@color/light_black"
+                        android:textSize="16dp"
+                        android:fontFamily="@font/roboto_regular"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="9dp"
+                        android:background="@color/view_color"/>
+
+
+                    <EditText
+                        android:id="@+id/recipient_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="42dp"
+                        android:hint="Recipient Email"
+                        android:letterSpacing="0.02"
+                        android:background="#00000000"
+                        android:textColor="@color/light_black"
+                        android:textSize="16dp"
+                        android:fontFamily="@font/roboto_regular"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="9dp"
+                        android:background="@color/view_color"/>
+
+
+                    <EditText
+                        android:id="@+id/confirm_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="42dp"
+                        android:hint="Confirm Recipient Email"
+                        android:letterSpacing="0.02"
+                        android:background="#00000000"
+                        android:textColor="@color/light_black"
+                        android:textSize="16dp"
+                        android:fontFamily="@font/roboto_regular"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="9dp"
+                        android:background="@color/view_color"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/employer_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+
+                    <EditText
+                        android:id="@+id/emp_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#00000000"
+                        android:layout_marginTop="42dp"
+                        android:hint="Employer Name"
+                        android:letterSpacing="0.02"
+                        android:textColor="@color/light_black"
+                        android:textSize="16dp"
+                        android:fontFamily="@font/roboto_regular"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="9dp"
+                        android:background="@color/view_color"/>
+
+
+                    <EditText
+                        android:id="@+id/empl_contact"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#00000000"
+                        android:layout_marginTop="42dp"
+                        android:hint="Employer Contact"
+                        android:letterSpacing="0.02"
+                        android:textColor="@color/light_black"
+                        android:textSize="16dp"
+                        android:fontFamily="@font/roboto_regular"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="9dp"
+                        android:background="@color/view_color"/>
+
+
+                    <EditText
+                        android:id="@+id/emp_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#00000000"
+                        android:layout_marginTop="42dp"
+                        android:hint="Employer Email"
+                        android:letterSpacing="0.02"
+                        android:textColor="@color/light_black"
+                        android:textSize="16dp"
+                        android:fontFamily="@font/roboto_regular"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="9dp"
+                        android:background="@color/view_color"/>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/personal_usage_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+
+                    <EditText
+                        android:id="@+id/caa_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#00000000"
+                        android:layout_marginTop="42dp"
+                        android:hint="CAA Email"
+                        android:letterSpacing="0.02"
+                        android:textColor="@color/light_black"
+                        android:textSize="16dp"
+                        android:fontFamily="@font/roboto_regular"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="9dp"
+                        android:background="@color/view_color"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+            <TextView
+                android:id="@+id/subMitBtn"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="Submit"
+                android:layout_marginTop="56dp"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:background="@drawable/blue_light_6dp"
+                android:textColor="@color/white"
+                android:textSize="16dp"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Instructions"
+                android:textColor="@color/light_black"
+                android:textSize="15dp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:lineHeight="22dp"
+                android:letterSpacing="0.02"
+                android:fontFamily="@font/roboto_regular"
+                android:text="State medical boards require applicants to show proof of certification of their desired profession. During the application process, you may be required to request from the NCCAA proof of certification. By submitting this form and making payment, NCCAA will receive your info, process the request within 4-5 business days, and send you a copy of the verification. In most cases, NCCAA can show proof by sending the state medical boards your certificate (the same one found in your account). If required, we will also send the certificate via regular postal mail. It is important that upon completion of this form, we have the pertinent details of the accurate email address of whom to send the certificate. It is also encouraged to supply NCCAA with the name of the state credentialing specialist, employer info, and sometimes date of birth. Please do not use a school email, rather, use a permanent one."
+                android:textColor="@color/dark_gray"
+                android:textSize="14dp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="How to Find"
+                android:textColor="@color/light_black"
+                android:textSize="15dp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:lineHeight="22dp"
+                android:text="Before contacting NCCAA regarding where to find any state medical board info, you will find this information within the state medical license application."
+                android:letterSpacing="0.02"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/dark_gray"
+                android:textSize="14dp" />
+
+
+
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

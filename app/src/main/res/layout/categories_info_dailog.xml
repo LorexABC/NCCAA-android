@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@drawable/border_round_gray"
+    android:layout_height="match_parent">
+
+
+
+    <RelativeLayout
+        android:id="@+id/catName2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:background="@color/blue">
+
+
+        <ImageView
+            android:id="@+id/closeImage2"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:visibility="invisible"
+            android:src="@drawable/cancel"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/catName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="10dp"
+            android:text="Tradegy!"
+            android:layout_toRightOf="@+id/closeImage2"
+
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_medium"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_toLeftOf="@+id/closeImage"
+            android:textSize="16dp" />
+
+
+        <ImageView
+            android:id="@+id/closeImage"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:src="@drawable/cancel"
+            app:tint="@color/white" />
+
+    </RelativeLayout>
+
+
+
+
+    <TextView
+        android:id="@+id/desName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/catName2"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:text="Tradegy!"
+        android:fontFamily="@font/roboto_regular"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/black"
+        android:textSize="14dp" />
+
+
+</RelativeLayout>

@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"
+        android:paddingVertical="20dp"
+        android:background="@drawable/orange_light_5dp"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:lineHeight="22dp"
+                android:text="Certification Exam"
+                android:textColor="@color/light_black"
+                android:textSize="20dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Date of Exam:"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/dark_orange"
+                    android:textSize="14dp" />
+                <TextView
+                    android:id="@+id/mDate_exam"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:text="June 9-11, 2022"
+                    android:textColor="@color/dark_orange"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Date/Time Paid:"
+                    android:textColor="@color/dark_orange"
+                    android:textSize="14dp" />
+                <TextView
+                    android:id="@+id/mDate_Paid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="05/01/2021 (3:01 AM)"
+                    android:lineHeight="22dp"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@color/dark_orange"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Amount Paid:"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/dark_orange"
+                    android:textSize="14dp" />
+                <TextView
+                    android:id="@+id/mAmount_Paid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="$150.00"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@color/dark_orange"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Payment Period:"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/dark_orange"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/mPayment_period"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Regular (on-time)"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@color/dark_orange"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Attempts:"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/dark_orange"
+                    android:textSize="14dp" />
+                <TextView
+                    android:id="@+id/mAttempts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="2 - (Retake #1)"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@color/dark_orange"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="University:"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/dark_orange"
+                    android:textSize="14dp" />
+                <TextView
+                    android:id="@+id/mUniversity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:lineHeight="22dp"
+                    android:text="Northeast Ohio Medical University, Rootstown, OH"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@color/dark_orange"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Univ/Code"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/dark_orange"
+                    android:textSize="14dp" />
+                <TextView
+                    android:id="@+id/mUniCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="NEOMED"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@color/dark_orange"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Receipt:"
+                    android:fontFamily="@font/roboto_medium"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/dark_orange"
+                    android:textSize="14dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+                    <TextView
+                        android:id="@+id/viewTV"
+                        android:layout_width="64dp"
+                        android:layout_height="28dp"
+                        android:background="@drawable/blue_light_25dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="center"
+                        android:text="VIEW"
+                        android:layout_marginRight="20dp"
+                        android:textColor="@color/white"
+                        android:textSize="14dp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

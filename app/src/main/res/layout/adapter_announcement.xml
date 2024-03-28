@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:paddingHorizontal="16dp"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingVertical="16dp">
+
+        <TextView
+            android:id="@+id/dateTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:text="12/20/2021"
+            android:textColor="@color/light_black"
+            android:lineHeight="24dp"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/headerTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:layout_marginTop="6dp"
+            android:lineHeight="24dp"
+            android:text="CONGRATULATIONS"
+            android:textColor="@color/light_black"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/decTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:letterSpacing="0.02"
+            android:layout_marginTop="6dp"
+            android:lineHeight="24dp"
+            android:text="NCCAA would like to congratulate the newly certified CAAs who graduated this month from Indiana University, Medical College of Wisconsin and University of Colorado, Denver!"
+            android:textColor="@color/light_black"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/view_color"/>
+
+</RelativeLayout>

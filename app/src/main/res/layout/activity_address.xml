@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include
+        android:id="@+id/include2"
+        layout="@layout/appbar4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.0065"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include2"
+        app:layout_constraintWidth_percent="0.91">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:weightSum="3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="5dp"
+                android:layout_weight="1"
+                android:background="@color/test" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="5dp"
+                android:layout_marginLeft="4dp"
+                android:layout_weight="1"
+                android:background="@color/blue_200" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="5dp"
+                android:layout_marginLeft="4dp"
+                android:layout_weight="1"
+                android:background="@color/blue_50" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"
+        app:layout_constraintWidth_percent="0.91">
+
+        <TextView
+            android:id="@+id/txtAddressId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Address"
+            android:textColor="@color/heading_text_color"
+            android:textSize="20sp"
+            android:textFontWeight="500"
+            android:lineHeight="22dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_layout_homeaddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto"
+            android:textColor="#9aa6b8"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtAddressId">
+
+            <EditText
+                android:id="@+id/etHomeAddressId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Home Street Address"
+                android:nextFocusDown="@+id/etCityId"
+                android:singleLine="true"
+                android:textFontWeight="400"
+                android:lineHeight="24dp"
+                android:fontFamily="@font/roboto"
+                android:textColor="#272f3e"
+                android:textSize="16sp"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_layout_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto"
+            android:textColor="#9aa6b8"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/text_input_layout_homeaddress"
+            app:layout_constraintStart_toStartOf="@+id/text_input_layout_homeaddress"
+            app:layout_constraintTop_toBottomOf="@+id/text_input_layout_homeaddress">
+
+            <EditText
+                android:id="@+id/etCityId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="City"
+                android:nextFocusDown="@+id/etStateId"
+                android:singleLine="true"
+                android:textFontWeight="400"
+                android:lineHeight="24dp"
+                android:fontFamily="@font/roboto"
+                android:textColor="#272f3e"
+                android:textSize="16sp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/text_input_layout_gender"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="3dp"
+            app:layout_constraintEnd_toEndOf="@+id/text_input_layout_city"
+            app:layout_constraintStart_toStartOf="@+id/text_input_layout_city"
+            app:layout_constraintTop_toBottomOf="@+id/text_input_layout_city"
+            >
+
+            <Spinner
+                android:id="@+id/stateSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:minHeight="0dp" />
+            <ImageView
+                android:layout_width="11dp"
+                android:layout_height="6.5dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_arrow_down" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.75dp"
+                android:layout_weight="1"
+                android:layout_alignParentBottom="true"
+                android:background="@color/dark_gray" />
+        </RelativeLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_layout_zip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto"
+            android:textColor="#9aa6b8"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/text_input_layout_gender"
+            app:layout_constraintStart_toStartOf="@+id/text_input_layout_gender"
+            app:layout_constraintTop_toBottomOf="@+id/text_input_layout_gender">
+            <EditText
+                android:id="@+id/etZipId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:textColor="#272f3e"
+                android:textSize="16sp"
+                android:textFontWeight="400"
+                android:lineHeight="24dp"
+                android:inputType="number"
+                android:maxLength="5"
+                android:singleLine="true"
+                android:nextFocusDown="@+id/countryDD"
+                android:hint="Zip"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_layout_country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"
+            android:fontFamily="@font/roboto"
+            android:textColor="#9aa6b8"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/text_input_layout_zip"
+            app:layout_constraintStart_toStartOf="@+id/text_input_layout_zip"
+            app:layout_constraintTop_toBottomOf="@+id/text_input_layout_zip">
+
+            <AutoCompleteTextView
+                android:id="@+id/countryDD"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:inputType="none"
+                android:textFontWeight="400"
+                android:lineHeight="24dp"
+                android:fontFamily="@font/roboto"
+                android:textColor="#272f3e"
+                android:textSize="16sp"
+                android:completionThreshold="0"
+
+                android:singleLine="true"
+                android:drawableRight="@drawable/ic_arrow_down"
+                android:cursorVisible="false"
+                android:hint="Country"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/btnContinueId"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.077"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/capsul_blue_btn"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Continue"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_input_layout_country"
+            app:layout_constraintVertical_bias="1.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

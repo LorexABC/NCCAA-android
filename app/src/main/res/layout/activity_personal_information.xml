@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include
+        android:id="@+id/include2"
+        layout="@layout/appbar4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.0065"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include2"
+        app:layout_constraintWidth_percent="0.91">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:weightSum="3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="5dp"
+                android:layout_weight="1"
+                android:background="@color/blue_200" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="5dp"
+                android:layout_marginLeft="4dp"
+                android:layout_weight="1"
+                android:background="@color/blue_50" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="5dp"
+                android:layout_marginLeft="4dp"
+                android:layout_weight="1"
+                android:background="@color/blue_50" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"
+        app:layout_constraintWidth_percent="0.91">
+
+        <TextView
+            android:id="@+id/txtPersonalInfoId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Personal Information"
+            android:textColor="@color/heading_text_color"
+            android:textSize="20sp"
+            android:textFontWeight="500"
+            android:lineHeight="22dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_layout_firstname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtPersonalInfoId"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto"
+            android:textColor="#9aa6b8"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtPersonalInfoId">
+
+            <EditText
+                android:id="@+id/etFirstNameId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="First Name"
+                android:nextFocusDown="@+id/etMiddleNameId"
+                android:singleLine="true"
+                android:inputType="textCapSentences"
+                android:textFontWeight="400"
+                android:lineHeight="24dp"
+                android:fontFamily="@font/roboto"
+                android:textColor="#272f3e"
+                android:textSize="16sp"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_layout_middlename"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto"
+            android:textColor="#9aa6b8"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/text_input_layout_firstname"
+            app:layout_constraintStart_toStartOf="@+id/text_input_layout_firstname"
+            app:layout_constraintTop_toBottomOf="@+id/text_input_layout_firstname">
+
+            <EditText
+                android:id="@+id/etMiddleNameId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Middle Name"
+                android:nextFocusDown="@+id/etLastNameId"
+                android:singleLine="true"
+                android:inputType="textCapSentences"
+                android:textFontWeight="400"
+                android:lineHeight="24dp"
+                android:fontFamily="@font/roboto"
+                android:textColor="#272f3e"
+                android:textSize="16sp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_layout_lastname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto"
+            android:textColor="#9aa6b8"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/text_input_layout_middlename"
+            app:layout_constraintStart_toStartOf="@+id/text_input_layout_middlename"
+            app:layout_constraintTop_toBottomOf="@+id/text_input_layout_middlename"
+            >
+
+            <EditText
+                android:id="@+id/etLastNameId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Last Name"
+                android:inputType="textCapSentences"
+                android:textFontWeight="400"
+                android:lineHeight="24dp"
+                android:fontFamily="@font/roboto"
+                android:textColor="#272f3e"
+                android:textSize="16sp"
+                android:nextFocusDown="@+id/dobet"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/dobet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:textColor="#272f3e"
+            android:textSize="16sp"
+            android:textFontWeight="400"
+            android:layout_marginTop="@dimen/_27sdp"
+            android:layout_marginHorizontal="@dimen/_3sdp"
+            android:lineHeight="24dp"
+            app:layout_constraintEnd_toEndOf="@+id/text_input_layout_lastname"
+            app:layout_constraintStart_toStartOf="@+id/text_input_layout_lastname"
+            app:layout_constraintTop_toBottomOf="@+id/text_input_layout_lastname"
+            android:drawableEnd="@drawable/ic_baseline_calendar_today_24"
+            android:drawableRight="@drawable/ic_baseline_calendar_today_24"
+            android:hint="Date of birth"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:layout_constraintEnd_toEndOf="@+id/dobet"
+            app:layout_constraintStart_toStartOf="@+id/dobet"
+            android:layout_marginHorizontal="@dimen/_3sdp"
+            app:layout_constraintTop_toBottomOf="@+id/dobet"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:layout_alignParentBottom="true"
+            android:background="@color/dark_gray" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_layout_cellphone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:fontFamily="@font/roboto"
+            android:textColor="#9aa6b8"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/dobet"
+            app:layout_constraintStart_toStartOf="@+id/dobet"
+            app:layout_constraintTop_toBottomOf="@+id/dobet">
+
+            <EditText
+                android:id="@+id/etCellPhoneId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Cell Phone"
+                android:nextFocusDown="@+id/genderDD"
+                android:inputType="phone"
+                android:textFontWeight="400"
+                android:lineHeight="24dp"
+                android:maxLength="10"
+                android:fontFamily="@font/roboto"
+                android:textColor="#272f3e"
+                android:textSize="16sp"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <RelativeLayout
+            android:id="@+id/text_input_layout_gender"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="3dp"
+            app:layout_constraintEnd_toEndOf="@+id/text_input_layout_cellphone"
+            app:layout_constraintStart_toStartOf="@+id/text_input_layout_cellphone"
+            app:layout_constraintTop_toBottomOf="@+id/text_input_layout_cellphone">
+
+            <Spinner
+                android:id="@+id/genderSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:minHeight="0dp" />
+            <ImageView
+                android:layout_width="11dp"
+                android:layout_height="6.5dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_arrow_down" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:layout_alignParentBottom="true"
+                android:background="@color/dark_gray" />
+        </RelativeLayout>
+
+
+
+
+
+        <Button
+            android:id="@+id/btnContinueId"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.077"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/capsul_blue_btn"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Continue"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_input_layout_gender"
+            app:layout_constraintVertical_bias="1.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

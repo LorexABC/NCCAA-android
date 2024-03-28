@@ -1,0 +1,215 @@
+package com.app_nccaa.nccaa.Activity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.NetworkError;
+import com.android.volley.NetworkResponse;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.ServerError;
+import com.android.volley.TimeoutError;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.Volley;
+import com.app_nccaa.nccaa.Adapter.AdapterBlog;
+import com.app_nccaa.nccaa.Utils.UserSession;
+import com.app_nccaa.nccaa.Model.BlogModel;
+import com.app_nccaa.nccaa.R;
+import com.app_nccaa.nccaa.Utils.VolleyMultipartRequest;
+import com.kaopiz.kprogresshud.KProgressHUD;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Blog extends AppCompatActivity {
+
+    private RecyclerView recBlog;
+    private AdapterBlog adapterBlog;
+
+    private UserSession session;
+
+    private ArrayList<BlogModel> blogModelArrayList = new ArrayList<>();
+    private SwipeRefreshLayout swipeRefreshLayout;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_blog);
+
+        session = new UserSession(Blog.this);
+
+
+        findViewById(R.id.backBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+
+        recBlog = findViewById(R.id.recBlog);
+        recBlog.setLayoutManager(new LinearLayoutManager(this));
+        adapterBlog = new AdapterBlog(this, blogModelArrayList, new AdapterBlog.OnItemClickListener() {
+            @Override
+            public void onItemClick(int pos) {
+
+                startActivity(new Intent(Blog.this, BlogDetail.class)
+                .putExtra("contentHTML", blogModelArrayList.get(pos).getHtmlContent())
+                .putExtra("date", blogModelArrayList.get(pos).getDate())
+                .putExtra("id", blogModelArrayList.get(pos).getId())
+                        .putExtra("subject", blogModelArrayList.get(pos).getSubject()));
+
+            }
+        });
+        recBlog.setAdapter(adapterBlog);
+
+        swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeRefreshLayout);
+
+        // SetOnRefreshListener on SwipeRefreshLayout
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                swipeRefreshLayout.setRefreshing(false);
+                getBlogList();
+            }
+        });
+
+        getBlogList();
+
+    }
+
+
+    private void getBlogList() {
+        final KProgressHUD progressDialog = KProgressHUD.create(Blog.this)
+                .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+                .setLabel("Please wait")
+                .setCancellable(false)
+                .setAnimationSpeed(2)
+                .setDimAmount(0.5f)
+                .show();
+
+        VolleyMultipartRequest volleyMultipartRequest = new VolleyMultipartRequest(Request.Method.GET, session.BASEURL + "blogs",
+                new Response.Listener<NetworkResponse>() {
+                    @Override
+                    public void onResponse(NetworkResponse response) {
+
+                        progressDialog.dismiss();
+                        blogModelArrayList.clear();
+                        try {
+                            Log.e("checkBlogList", new String(response.data) + "--");
+
+
+                            JSONArray jsonArray = new JSONArray(new String(response.data));
+
+                            Log.e("checkArray", jsonArray.toString() + "--");
+
+
+                            for (int i = 0; i < jsonArray.length(); i++){
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+                                BlogModel blogModel = new BlogModel();
+                                blogModel.setId(jsonObject.getString("id"));
+                                blogModel.setSubject(jsonObject.getString("subject"));
+                                blogModel.setHtmlContent(jsonObject.getString("htmlContent"));
+
+                                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                                Date date = sdf.parse(jsonObject.getString("date"));
+                                sdf = new SimpleDateFormat("MMM dd, yyyy");
+                                String yourFormatedDateString = sdf.format(date);
+
+                                blogModel.setDate(yourFormatedDateString);
+
+
+                                blogModelArrayList.add(blogModel);
+                            }
+
+                            adapterBlog.notifyDataSetChanged();
+
+
+                        } catch (Exception e) {
+
+                            Toast.makeText(Blog.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        progressDialog.dismiss();
+                        if (error instanceof ServerError){
+
+                            if(error.networkResponse != null && error.networkResponse.data != null){
+                                switch(error.networkResponse.statusCode){
+                                    case 500:
+                                        String json = new String(error.networkResponse.data);
+                                        json = session.trimMessage(json, "message");
+                                        if(json != null) {
+                                            Toast.makeText(Blog.this, json, Toast.LENGTH_LONG).show();
+                                        }
+                                        break;
+                                }
+                                //Additional cases
+                            }
+                        }
+                        else if (error instanceof TimeoutError)
+                            Toast.makeText(Blog.this, "Connection Timed Out", Toast.LENGTH_LONG).show();
+                        else if (error instanceof NetworkError)
+                            Toast.makeText(Blog.this, "Bad Network Connection", Toast.LENGTH_LONG).show();
+
+                    }
+                }) {
+
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+             /*   params.put("username", userNameET.getText().toString());
+                params.put("password", passwordET.getText().toString());
+                params.put("fullname", fullNameET.getText().toString());
+                params.put("device_type", "android");
+                params.put("device_token", android_id);*/
+
+                return params;
+            }
+
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+           //     params.put("Accept", "application/json");
+                params.put("Authorization", "Bearer " + session.getAPITOKEN());
+                return params;
+            }
+
+            @Override
+            protected Map<String, DataPart> getByteData() {
+                Map<String, DataPart> params = new HashMap<>();
+
+                return params;
+            }
+        };
+
+        volleyMultipartRequest.setShouldRetryServerErrors(true);
+
+        Volley.newRequestQueue(Blog.this).add(volleyMultipartRequest);
+    }
+
+
+
+
+}

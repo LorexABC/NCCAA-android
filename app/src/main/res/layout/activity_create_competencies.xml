@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".technovicinity.ui.clinical.ClinicalCompetenciesActivity">
+
+        <include
+            android:id="@+id/app_toolbar"
+            layout="@layout/layout_toolbar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/linearLayoutCompat"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:padding="14dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnSave"
+            app:layout_constraintTop_toBottomOf="@+id/app_toolbar"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_editor_absoluteX="0dp">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/no_data_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_medium"
+                        android:lineHeight="22dp"
+                        android:text="Start New Case/Patient"
+                        android:textColor="@color/black"
+                        android:textFontWeight="500"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/c_date_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:cursorVisible="false"
+                        android:drawableRight="@drawable/ic_arrow_right"
+                        android:focusable="false"
+                        android:hint="Date"
+                        android:inputType="none"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"
+                        android:textColor="@color/text_color"
+                        android:textColorHint="@color/text_color" />
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/c_title_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Title"
+                        android:inputType="text"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"
+                        android:textColor="@color/text_color"
+                        android:textColorHint="@color/text_color"/>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_64sdp">
+
+                        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                            android:id="@+id/appCompatAutoCompleteTextView_starttime"
+                            android:layout_width="match_parent"
+                            android:layout_height="99dp"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:inputType="none"
+                            android:text="Start Time"
+                            android:textColor="@color/text_color"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:gravity="right|center"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/bg_ash"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <com.weigan.loopview.LoopView
+                                    android:id="@+id/st_rv_hour"
+                                    android:layout_width="@dimen/_40sdp"
+                                    android:layout_height="80dp"
+                                    app:awv_isCurve="true"
+                                    app:awv_lineSpace="1"
+                                    app:awv_textsize="15" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=":"
+                                    android:textColor="@color/black"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <com.weigan.loopview.LoopView
+                                    android:id="@+id/st_rv_min"
+                                    android:layout_width="@dimen/_40sdp"
+                                    android:layout_height="80dp"
+                                    app:awv_isCurve="true"
+                                    app:awv_lineSpace="1"
+                                    app:awv_textsize="15" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <com.google.android.material.tabs.TabLayout
+                                    android:id="@+id/start_ampm_tabbar"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="80dp"
+                                    android:background="@drawable/bg_ash"
+                                    app:tabBackground="@drawable/am_pm_selector_bg"
+                                    app:tabIndicator="@null"
+                                    app:tabIndicatorAnimationDuration="200"
+                                    app:tabIndicatorHeight="0dp"
+                                    app:tabMode="fixed"
+                                    app:tabRippleColor="@android:color/transparent"
+                                    app:tabTextAppearance="@style/TextAppearance.MaterialComponents.Button"
+                                    app:tabTextColor="@color/black">
+
+                                    <com.google.android.material.tabs.TabItem
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text=" AM " />
+
+                                    <com.google.android.material.tabs.TabItem
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text=" PM " />
+
+                                </com.google.android.material.tabs.TabLayout>
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_64sdp">
+
+                        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                            android:id="@+id/appCompatAutoCompleteTextView_endtime"
+                            android:layout_width="match_parent"
+                            android:layout_height="99dp"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:inputType="none"
+                            android:text="End Time"
+                            android:textColor="@color/text_color"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="right|center"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="5dp"
+                                android:background="@drawable/bg_ash"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <com.weigan.loopview.LoopView
+                                    android:id="@+id/et_rv_hour"
+                                    android:layout_width="@dimen/_40sdp"
+                                    android:layout_height="80dp"
+                                    app:awv_isCurve="true"
+                                    app:awv_textsize="15" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text=":"
+                                    android:textColor="@color/black"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <com.weigan.loopview.LoopView
+                                    android:id="@+id/et_rv_min"
+                                    android:layout_width="@dimen/_40sdp"
+                                    android:layout_height="80dp"
+                                    app:awv_isCurve="true"
+                                    app:awv_textsize="15" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <com.google.android.material.tabs.TabLayout
+                                    android:id="@+id/end_ampm_tabbar"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="80dp"
+                                    android:background="@drawable/bg_ash"
+                                    app:tabBackground="@drawable/am_pm_selector_bg"
+                                    app:tabIndicator="@null"
+                                    app:tabIndicatorAnimationDuration="200"
+                                    app:tabIndicatorHeight="0dp"
+                                    app:tabRippleColor="@android:color/transparent"
+                                    app:tabTextAppearance="@style/TextAppearance.MaterialComponents.Button"
+                                    app:tabTextColor="@color/black">
+
+                                    <com.google.android.material.tabs.TabItem
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text=" AM " />
+
+                                    <com.google.android.material.tabs.TabItem
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text=" PM " />
+
+                                </com.google.android.material.tabs.TabLayout>
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/c_age_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Patient Age"
+                        android:inputType="number"
+                        android:paddingStart="4dp"
+                        android:paddingLeft="4dp"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"
+                        android:textColor="@color/text_color"
+                        android:textColorHint="@color/text_color"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:layout_marginHorizontal="@dimen/_3sdp"
+                        android:layout_weight="1"
+                        android:background="@color/transparence" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"  >
+
+                        <Spinner
+                            android:id="@+id/c_classification_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="22dp"
+                            android:layout_centerVertical="true"
+                            android:background="@null"
+                            android:minHeight="0dp"
+                            android:textColorHint="@color/text_color"/>
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"
+                            android:src="@drawable/ic_expand_arrow" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginHorizontal="@dimen/_3sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_weight="1"
+                        android:background="@color/grey_500" />
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp">
+
+                        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:inputType="none"
+                            android:paddingTop="20dp"
+                            android:paddingBottom="20dp" />
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/c_asa"
+                            android:textSize="17dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="6dp"
+                            android:paddingLeft="6dp"
+                            android:paddingTop="20dp"
+                            android:paddingBottom="20dp"
+                            android:text="Emergent (ASA Class E) (Yes/No)"
+                            android:textColor="@color/text_color" />
+
+                    </FrameLayout>
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/c_category_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:cursorVisible="false"
+                        android:drawableRight="@drawable/ic_arrow_right"
+                        android:focusable="false"
+                        android:hint="Categories/Skills"
+                        android:inputType="none"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"
+                        android:textColor="@color/text_color"
+                        android:textColorHint="@color/text_color" />
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/show_category_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:hint="Categories/Skills"
+                        android:inputType="none"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="20dp"
+                        android:scrollbars="vertical"
+                        android:textColor="@color/text_color"
+                        android:textColorHint="@color/text_color"
+                        android:visibility="gone" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_margin="14dp"
+            android:background="@drawable/capsul_blue_btn"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Save"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/btnDelete" />
+
+        <FrameLayout
+            android:id="@+id/btnDelete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="14dp"
+            android:background="@drawable/red_btn_unselected"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableLeft="@drawable/delete_"
+                android:drawablePadding="6dp"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="Delete Case"
+                android:textAllCaps="false"
+                android:textColor="@color/red"
+                android:textSize="16sp" />
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

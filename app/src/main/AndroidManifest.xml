@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.app_nccaa.nccaa">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.NCCAA"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".Activity.More_Info_Cert_Exam"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Activity.ViewDocument"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Webview_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.CategoriesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.CreateCompetenciesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.EditCompetenciesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.PersonalInformationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.PsiMandatoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.PsiMandatory2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.CaaInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.AddressActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Results_Score"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Testing_Center"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Simulation"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Receipt"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Add_Credit_Card_Payment"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.PSI_Form"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Add_CME"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.History"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Contact_Us"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.BlogDetail"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Blog"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.CDQ_Exam"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.State_Licensing_Form"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Certificate_Exam"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Announcements"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.View_CAA_Certificate"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.CME_Submissions"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Important_Info_Dates"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.SplashScreenActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.ForgotPasswordEmailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.CheckEmailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.EmailOtpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.NewPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.PasswordResetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.ForgotPasswordPhoneActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.ConditionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.PrivacyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Edit_CME"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.NoticeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activity.EditProfile"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.ClinicalCompetenciesActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.HomeScreen"
+            android:exported="true" />
+    </application>
+
+</manifest>

@@ -1,0 +1,783 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.app_nccaa.nccaa.Activity.CDQ_Exam">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/purple_700"
+        android:paddingHorizontal="16dp"
+        android:layout_height="56dp">
+
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_left" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/logo_11" />
+
+    </RelativeLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_medium"
+                android:lineHeight="22dp"
+                android:text="CDQ Exam"
+                android:textColor="@color/light_black"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/examTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="To maintain certification, after a CAA passes their next exam starting 1/1/2020, any subsequent CDQ exam is taken every ten years . Students becoming CAAs starting in 2020 will take their 1st CDQ exam in 4 years, then their next CDQ exam will be in 10 years. Choose one option below more info"
+                android:textSize="14dp"
+                android:letterSpacing="0.02"
+                android:layout_marginTop="10dp"
+                android:lineHeight="22dp"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/dark_gray"/>
+
+
+            <LinearLayout
+                android:id="@+id/cdqInfo"
+                android:layout_width="match_parent"
+                android:weightSum="3"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:layout_height="60dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="CDQ Info"
+                        android:lineHeight="22dp"
+                        android:textColor="@color/light_black"
+                        android:textSize="17dp" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/ic_arrow" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/view_color"/>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:weightSum="3"
+                android:gravity="center_vertical"
+                android:layout_height="60dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_program" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="2"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="10dp"
+                        android:layout_weight="0.75"
+                        android:text="Program"
+                        android:textColor="@color/light_black"
+                        android:textSize="17dp"
+                        android:fontFamily="@font/roboto_regular"/>
+                    <TextView
+                        android:id="@+id/programTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="UMKC"
+                        android:textAlignment="textEnd"
+                        android:layout_weight="1.25"
+                        android:layout_marginRight="8dp"
+                        android:textColor="@color/dark_gray_light"
+                        android:textSize="17dp"
+                        android:fontFamily="@font/roboto_regular"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_arrow" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/view_color"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:weightSum="3"
+                android:gravity="center_vertical"
+                android:layout_height="60dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_cdq_due_date"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="2"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="10dp"
+                        android:layout_weight="0.75"
+                        android:text="CDQ Due Date"
+                        android:textColor="@color/light_black"
+                        android:textSize="17dp"
+                        android:fontFamily="@font/roboto_regular"/>
+                    <TextView
+                        android:id="@+id/certificate_due_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="02/12/2022"
+                        android:textAlignment="textEnd"
+                        android:layout_weight="1.25"
+                        android:layout_marginRight="8dp"
+                        android:textColor="@color/dark_gray_light"
+                        android:textSize="17dp"
+                        android:fontFamily="@font/roboto_regular"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_arrow" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/view_color"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:weightSum="3"
+                android:gravity="center_vertical"
+                android:layout_height="60dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_attempt__" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="2"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="10dp"
+                        android:layout_weight="0.75"
+                        android:text="Attempt #"
+                        android:textColor="@color/light_black"
+                        android:textSize="17dp"
+                        android:fontFamily="@font/roboto_regular"/>
+                    <TextView
+                        android:id="@+id/attemptTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="1st Attempt"
+                        android:textAlignment="textEnd"
+                        android:layout_weight="1.25"
+                        android:textColor="@color/dark_gray_light"
+                        android:textSize="17dp"
+                        android:fontFamily="@font/roboto_regular"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/view_color"/>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:weightSum="3"
+                android:gravity="center_vertical"
+                android:layout_height="60dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_testing_center" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="2"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="10dp"
+                        android:layout_weight="0.75"
+                        android:text="Testing Center"
+                        android:textColor="@color/light_black"
+                        android:textSize="17dp"
+                        android:fontFamily="@font/roboto_regular"/>
+                    <TextView
+                        android:id="@+id/testingCenterTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Not Booked"
+                        android:textAlignment="textEnd"
+                        android:layout_weight="1.25"
+                        android:textColor="@color/dark_gray_light"
+                        android:textSize="17dp"
+                        android:fontFamily="@font/roboto_regular"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/view_color"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:weightSum="3"
+                android:gravity="center_vertical"
+                android:layout_height="60dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_results" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="2"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="10dp"
+                        android:layout_weight="0.75"
+                        android:text="Results"
+                        android:textColor="@color/light_black"
+                        android:textSize="17dp"
+                        android:fontFamily="@font/roboto_regular"/>
+                    <TextView
+                        android:id="@+id/resultTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Not Available"
+                        android:textAlignment="textEnd"
+                        android:layout_weight="1.25"
+                        android:textColor="@color/dark_gray_light"
+                        android:textSize="17dp"
+                        android:fontFamily="@font/roboto_regular"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/view_color"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:weightSum="3"
+                android:gravity="center_vertical"
+                android:layout_height="60dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_history1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="2"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="10dp"
+                        android:layout_weight="0.75"
+                        android:text="History"
+                        android:textColor="@color/light_black"
+                        android:textSize="17dp"
+                        android:fontFamily="@font/roboto_regular"/>
+                    <TextView
+                        android:id="@+id/noHistoryTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="1st Attempt"
+                        android:textAlignment="textEnd"
+                        android:layout_weight="1.25"
+                        android:textColor="@color/dark_gray_light"
+                        android:textSize="17dp"
+                        android:fontFamily="@font/roboto_regular"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/view_color"/>
+
+
+            <LinearLayout
+                android:id="@+id/mRetakeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/layout_5dp_round_white"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:elevation="@dimen/_2sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/mRetakeValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:lineHeight="22dp"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:text=""
+                    android:textColor="@color/light_black"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="There are a total of two retakes allowed to pass the CDQ exam"
+                    android:textSize="14dp"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:letterSpacing="0.02"
+                    android:layout_marginTop="10dp"
+                    android:lineHeight="22dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textColor="@color/dark_gray"/>
+
+                <TextView
+                    android:id="@+id/mDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="14dp"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:letterSpacing="0.02"
+                    android:layout_marginTop="10dp"
+                    android:lineHeight="22dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textColor="@color/dark_gray"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select the Pay Now button to register for your next exam. After completing the PSI form and making payment, the Testing Center button below will activate approx. 3 months prior to the next available exam date, enabling you to schedule your exam location."
+                    android:textSize="14dp"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:letterSpacing="0.02"
+                    android:layout_marginTop="10dp"
+                    android:lineHeight="22dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textColor="@color/dark_gray"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:lineHeight="22dp"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:text="Retake fee : "
+                    android:textColor="@color/light_black"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:id="@+id/mRetakeFee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:lineHeight="22dp"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:text=""
+                    android:textColor="@color/light_black"
+                    android:textSize="17dp" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Step #1"
+                android:textColor="@color/light_black"
+                android:fontFamily="@font/roboto_regular"
+                android:textSize="14dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recRegisterExam"
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/orange_light_5dp"
+                android:layout_height="wrap_content"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/orange_light_5dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="February 10-12, 2024, CDQ Exam"
+                        android:textColor="@color/light_black"
+                        android:lineHeight="22dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textSize="20dp"/>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="3"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/dark_orange"
+                            android:layout_weight="2"
+                            android:textSize="14dp"
+                            android:text="Registration:"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/dark_orange"
+                            android:textSize="14dp"
+                            android:layout_weight="1"
+                            android:text="11/10/2023 - 01/10/2024"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="3"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/dark_orange"
+                            android:textSize="14dp"
+                            android:layout_weight="2"
+                            android:text="Late:"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/dark_orange"
+                            android:textSize="14dp"
+                            android:layout_weight="1"
+                            android:text="01/11/2024 - 02/10/2024"/>
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/blue_light_10dp"
+                        android:text="Register for the February Exam"
+                        android:textSize="16dp"
+                        android:paddingVertical="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginTop="25dp"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:fontFamily="@font/roboto_medium"/>
+
+                </LinearLayout>
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:src="@drawable/circle_image_line"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="15dp"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="June 9-11, 2024, CDQ Exam"
+                        android:textColor="@color/light_black"
+                        android:lineHeight="22dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textSize="20dp"/>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="3"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/dark_orange"
+                            android:textSize="14dp"
+                            android:layout_weight="2"
+                            android:text="Registration:"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/dark_orange"
+                            android:textSize="14dp"
+                            android:layout_weight="1"
+                            android:text="03/09/2024 - 05/09/2024"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="3"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/dark_orange"
+                            android:textSize="14dp"
+                            android:layout_weight="2"
+                            android:text="Late:"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/dark_orange"
+                            android:textSize="14dp"
+                            android:layout_weight="1"
+                            android:text="05/10/2024 - 06/10/2024"/>
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/blue_light_10dp"
+                        android:text="Register for the June Exam"
+                        android:textSize="16dp"
+                        android:paddingVertical="15dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="25dp"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:fontFamily="@font/roboto_medium"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Step #2"
+                android:textColor="@color/light_black"
+                android:fontFamily="@font/roboto_regular"
+                android:textSize="14dp"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:paddingVertical="20dp"
+                android:background="@drawable/blue_5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="After registering and making payment, select a testing center location, date, and time"
+                    android:textSize="14dp"
+                    android:lineHeight="22dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textColor="@color/light_black"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recBookingCenter"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Step #3"
+                android:textColor="@color/light_black"
+                android:fontFamily="@font/roboto_regular"
+                android:textSize="14dp"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:paddingVertical="20dp"
+                android:background="@drawable/blue_5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Results"
+                    android:textColor="@color/light_black"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textSize="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:lineHeight="22dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Within 8-10 weeks after successfully taking the exam, the results will appear here"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textColor="@color/light_black"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recResults"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</LinearLayout>
